@@ -29,8 +29,6 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/style/slide.css";
-
 .answer-tab {
   justify-content: space-between;
 }

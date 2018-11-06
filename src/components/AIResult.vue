@@ -9,7 +9,7 @@
         <div class="department-item department-item-block" v-if="this.resultJson.content.length > 2">
             <p class="disease-tips">其他相关科室推荐(暂不支持线上挂号)</p>
             <div class="department-info">
-                <div class="input-symptom-desc" @click="test">普外科</div>
+                <div class="input-symptom-desc">普外科</div>
                 <a class="" href="tel:01069006900"> 电话预约</a>
             </div>
         </div>
@@ -32,17 +32,13 @@
     </div>
 </template>
 <script>
+import Reload from './Reload'
 export default {
   props: ['title', 'tips', 'resultJson'],
-  methods: {
-    test () {
-      console.log('this.resultJson-->', this.resultJson.content.length)
-    }
-  }
+  components: {Reload}
 }
 </script>
 <style scoped>
-@import '../assets/style/slide.css';
 .department-item{
     padding-bottom: 15px;
     display: flex;

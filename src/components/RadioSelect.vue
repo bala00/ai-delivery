@@ -61,7 +61,6 @@ export default {
 }
 </script>
 <style scoped>
-@import "../assets/style/slide.css";
 .symptom-content li {
   padding: 5px 9px;
   font-size: 1.4rem;

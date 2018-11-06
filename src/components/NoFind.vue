@@ -6,12 +6,13 @@
     </div>
 </template>
 <script>
+import Reload from './Reload'
 export default {
-  props: ['query']
+  props: ['query'],
+  components: { Reload }
 }
 </script>
 <style scoped>
-@import '../assets/style/slide.css';
 .input-symptom-desc{
     color: #4c87e5;
     letter-spacing: 1px;

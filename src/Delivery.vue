@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container ai-delivery">
         <div class="card-bar" v-if="!barVisible">
             <Tips/>
             <Slide :sex="duNurse.sex" @select="handlerSelect" />
@@ -15,7 +15,27 @@
     </div>
 </template>
 <script>
+import Vue from 'vue'
+import VueJsonp from 'vue-jsonp'
+// import { Tips, Slide, Search, NoFind, Reload, RadioSelect, AIResult } from './components/index'
+import Tips from './components/Tips'
+import Search from './components/Search'
+import Slide from './components/Slide'
+import NoFind from './components/NoFind'
+import Reload from './components/Reload'
+import RadioSelect from './components/RadioSelect'
+import AIResult from './components/AIResult'
+Vue.use(VueJsonp)
 export default {
+  components: {
+    Tips,
+    Search,
+    Slide,
+    NoFind,
+    Reload,
+    RadioSelect,
+    AIResult
+  },
   data () {
     return {
       searchVisible: false,
@@ -47,7 +67,6 @@ export default {
     },
     jsonp (type) {
       this.$jsonp('https://fz.baidu.com/duNurse', this.duNurse).then(json => {
-        console.log('json111--->', json)
         this.resultJson = json
         this.duNurse.sessionId = json.sessionId
         if (json.type === 'radioBox') {
@@ -67,12 +86,10 @@ export default {
             })
           })
         } else if (json.type === 'disease') {
-          console.log('type-->', type)
           if (type === 'search') {
             this.resultText = this.duNurse.query
             this.resultTips = '通过分析您的回答，建议您去以下科室挂号'
           } else {
-            console.log('haha')
             this.resultText = '通过分析您的回答，建议您去以下科室挂号'
             this.resultTips = ''
           }
@@ -99,7 +116,51 @@ export default {
   }
 }
 </script>
+<style>
+@import './font/iconfont.css';
+html, body{
+  width: 100vw;
+  min-height: 100vh;
+  font-size: 10px;
+  overflow: hidden;
+  background-color: #f2f2f2
+}
+.ai-delivery .slider {
+  margin-bottom: 20px;
+  padding: 15px 5%;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.ai-delivery .problem-bar {
+  padding-bottom: 10px;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  overflow: hidden;
+  color: #505050;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ai-delivery .answer-tips, .disease-tips {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  padding-bottom: 4px;
+  color: #797979;
+}
+.ai-delivery .flex{
+  display: flex;
+  align-items: center;
+}
+.ai-delivery .flex-auto{
+  flex: 1 1 auto;
+}
+.ai-delivery .flex-no{
+  flex: 0 0 auto;
+}
+</style>
 <style scoped>
+.container{
+    height: 100vh;
+}
 .card-bar.after {
   position: fixed;
   width: 90%;

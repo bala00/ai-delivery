@@ -12,16 +12,3 @@ html, body{
 ul, li{
     list-style: none
 }
-.container{
-    height: 100vh;
-}
-.flex{ 
-    display: flex; 
-    align-items: center; 
-}
-.flex-auto{ 
-    flex: 1 1 auto; 
-}
-.flex-no{ 
-    flex: 0 0 auto; 
-}
