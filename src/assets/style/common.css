@@ -1,0 +1,27 @@
+*, html, body{ 
+    margin: 0; 
+    padding: 0 
+}
+html, body{ 
+    width: 100vw;
+    min-height: 100vh;
+    font-size: 10px; 
+    overflow: hidden;
+    background-color: #f2f2f2 
+}
+ul, li{
+    list-style: none
+}
+.container{
+    height: 100vh;
+}
+.flex{ 
+    display: flex; 
+    align-items: center; 
+}
+.flex-auto{ 
+    flex: 1 1 auto; 
+}
+.flex-no{ 
+    flex: 0 0 auto; 
+}
