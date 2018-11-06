@@ -159,7 +159,9 @@ html, body{
 </style>
 <style scoped>
 .container{
-    height: 100vh;
+  margin: auto;
+  width: 90%;
+  height: 100vh;
 }
 .card-bar.after {
   position: fixed;
