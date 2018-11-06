@@ -2,10 +2,6 @@
 
 > AI 智能问诊
 
-## Tips
-
-> 1、公共基础样式设置为 font-size: 10px，因代码中的字体设置用了rem
-> 2、#app 去掉text-align:center
 
 ## Get Start
 
@@ -21,7 +17,23 @@
         }
 
 ### Usage
-
         <template>
             <Delivery />
         </template>
+
+
+## Tips
+
+> common.css
+
+        html, body{
+            margin: 0;
+            padding: 0;
+            font-size: 10px;   //1rem = 10px;
+        }
+        li{
+            list-style: none;
+        }
+        #app{
+            text-align: left;
+        }
